@@ -1,5 +1,5 @@
 /**
- * @file Instrument.ino
+ * @file ArduinoInstrument.ino
  * 
  * @author Ethan Ruffing <ruffinge@mail.gvsu.edu>
  * @since 2015-11-29
