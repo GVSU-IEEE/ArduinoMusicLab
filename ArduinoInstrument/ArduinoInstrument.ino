@@ -37,7 +37,7 @@
  */
 int distToFreq(float dist);
 
-void setup() {
+void setup() {  
   pinMode(BTN_PIN, INPUT_PULLUP);
 }
 
@@ -47,9 +47,20 @@ void loop() {
   } else {
     noTone(PIEZO_PIN);
   }
+
+  delay(20);
 }
 
 int distToFreq(float dist) {
-  return ((dist - 10) / 70.0) * 4947 + 31;
+  int i;
+  if (dist < 9) {
+    i = 0;
+  } else if (dist > 90) {
+    i = PITCHRANGE - 1;
+  } else {
+    i = ((dist - 10) / 70.0) * 89;
+  }
+  
+  return NOTES[i];
 }
 
